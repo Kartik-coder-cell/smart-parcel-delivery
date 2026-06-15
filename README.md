@@ -1,72 +1,72 @@
-# 📦 Smart Parcel Delivery System (P2P Logistics Prototype)
+# 📦 Smart Parcel Delivery System - Quick Start Guide
 
-Welcome to the **Smart Parcel Delivery System**! This is a full-stack peer-to-peer (P2P) crowdsourced logistics platform. It connects everyday commuters travelling between cities with senders who need packages delivered along those exact routes, lowering shipping costs and reducing the regional carbon footprint.
-
----
-
-## 🛠️ Phase 1: One-Time Software Prerequisites (For Beginners)
-
-Before running the project, your computer needs the following environment tools installed:
-
-1. **Node.js (LTS Version)** - Download and install from: [https://nodejs.org/](https://nodejs.org/)  
-   * *This provides the JavaScript runtime engine required to execute the backend database server.*
-   
-2. **Visual Studio Code (VS Code)** - Download and install from: [https://code.visualstudio.com/](https://code.visualstudio.com/)  
-   * *The code editor used to manage and view the project files.*
-
-*(Note: You do NOT need to download XAMPP, Apache, or MySQL. The project runs on an integrated SQLite file database engine).*
+Hey bro! Follow this step-by-step guide to set up and run the project on your machine right from scratch. You don't need any special database software or extensions installed—everything is built right into the code!
 
 ---
 
-## 🚀 Phase 2: Manual Step-by-Step Running Guide
+### 🛠️ Step 1: Install Node.js (If you don't have it)
+The backend runs on Node.js. If you haven't installed it yet:
+1. Go to https://nodejs.org/ and download the **LTS Version**.
+2. Run the installer and click "Next" until it finishes.
 
-Follow these simple steps to launch the project manually on your computer:
+---
 
-### Step 1: Open the Project in VS Code
-1. Click the green **Code** button on this GitHub page and select **Download ZIP**.
-2. Extract the downloaded ZIP folder anywhere onto your desktop.
-3. Open VS Code, go to the top menu, click `File` ➔ `Open Folder...`, and select the extracted `smart-parcel-delivery` folder.
+### 📂 Step 2: Open the Project in VS Code
+1. Download or clone the project folder from GitHub.
+2. Open **VS Code**.
+3. Go to **File > Open Folder** and select the main `smart-parcel-delivery` project folder.
 
-### Step 2: Install Code Packages
-1. Open a new terminal window inside VS Code (`Terminal` ➔ `New Terminal`).
-2. Type this exact command to step inside the backend folder and press **Enter**:
+---
+
+### 📥 Step 3: Install the Project Dependencies
+We need to download the code packages (like Express and SQLite) that make the app work.
+1. In VS Code, open the terminal by pressing **Ctrl + `** (or go to **Terminal > New Terminal** at the top menu).
+2. Type the following command and hit **Enter**:
    ```bash
-   cd backend
+   npm install
+(Wait a few seconds for it to finish downloading the node_modules folder).
 
-Type this command to download the internal database drivers and press Enter:
+🚀 Step 4: Start the Backend Server
+Now let's turn on the database and API pipeline.
+
+In your terminal, move into the backend directory by typing:
 
 Bash
-npm install
-(Wait about 10 seconds for the download process to complete).
-
-Step 3: Start the Server Pipeline
-In that same terminal window, type this command to turn on the database server and press Enter:
+cd backend
+Start the server by running:
 
 Bash
 node server.js
-Verify Execution: Confirm that your terminal displays this message:
 
-Plaintext
-================================================================
-[INTELLIGENT MATRIX ACTIVE] Running smart intercept engine on Port: 5000
-================================================================
-🚨 CRITICAL WARNING: Keep this terminal window open and running! Closing it turns off the backend system.
+Look at your terminal! You should see green success messages like:
+[DATABASE ONLINE] Connected to permanent SQLite file engine.
+(Note: The system automatically generates a brand new, private database file named database.sqlite inside your backend folder right now!)
 
-Step 4: Open the Frontend Dashboard
-Look at the folder files list on the left side of VS Code.
+🌐 Step 5: Start the Frontend Interface
+Keep the backend terminal running! Now let's open the website.
 
-Open the frontend folder, right-click on the index.html file, and select Open with Google Chrome.
+Open a second terminal split in VS Code (click the + icon or split button in the terminal panel panel).
 
-🧪 Phase 3: Basic Live Testing Sequence (The Complete Walkthrough)
-To see the application compute a live match, follow this exact sequence on your browser screen:
+Move into the frontend directory:
 
-👤 1. Auth Node: Input a name, email, and password. Select a role and click Initialize Profile. This creates your profile entry under User ID: 1.
+Bash
+cd frontend
+Start the frontend server:
 
-📦 2. Sender Desk: Input Sender ID 1. In the city fields, type upstream as the pickup city (e.g., nashik) and your destination city (e.g., pune). Click Inject Parcel Packet.
+Bash
+npm run dev
 
-🚀 3. Traveller Deck: Input Traveller ID 1. In the city fields, type your starting city (e.g., nashik) and target destination city (e.g., pune). Click Publish Route Leg.
+Click the local link that pops up in your terminal (usually http://localhost:5173 or similar) to open the dashboard in your Google Chrome browser!
 
-🤖 Execute Engine: Scroll down on that same Traveller Deck page and click the green Scan Database Pipeline button.
+🧪 Step 6: How to Test a Live Relational Match!
+To watch the automated matchmaking system do its magic, perform this exact sequence in your browser tabs:
 
-✨ The Result: The system will dynamically execute a relational comparison loop across your database tables and draw a bright green "🔥 LOGISTICAL MATCH DETECTED" card on your screen instantly!
-   
+👤 Tab 1 (Auth Node): Register a brand new user profile. Put in any name, password, email, and mobile number. Click Initialize Profile. A popup will tell you what ID was created (e.g., Assigned User ID: 2). Remember that ID!
+
+📦 Tab 2 (Sender Desk): Enter that User ID. Set Pickup City to nashik and Destination City to pune. Click Inject Parcel Packet.
+
+🚀 Tab 3 (Traveller Deck): Enter the exact same User ID. Set Source City to nashik and Destination City to pune. Click Publish Route Leg.
+
+🤖 Scroll down to the Match Engine: Click the green Scan Database Pipeline button.
+
+Boom! The yellow bar will disappear, and a green "🔥 LOGISTICAL MATCH DETECTED" card will slide onto your screen showing the cargo routing details matching your exact travel vectors!
