@@ -1,0 +1,60 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.13.0
+2 info using node@v24.16.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Admin-pc\AppData\Local\Microsoft\TypeScript\6.0\.npmrc
+5 silly config load:file:C:\Users\Admin-pc\.npmrc
+6 silly config load:file:C:\smart-parcel-delivery\backend\etc\npmrc
+7 verbose title npm install @types/react-dom@ts6.0
+8 verbose argv "install" "--ignore-scripts" "@types/react-dom@ts6.0" "--save-dev" "--user-agent" "typesInstaller/6.0.3"
+9 verbose logfile logs-max:10 dir:C:\smart-parcel-delivery\backend\.npm-cache\_logs\2026-06-14T16_54_51_155Z-
+10 verbose logfile C:\smart-parcel-delivery\backend\.npm-cache\_logs\2026-06-14T16_54_51_155Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 silly packumentCache corgi:https://registry.npmjs.org/@types%2freact-dom cache-miss
+14 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 789ms (cache miss)
+15 silly packumentCache corgi:https://registry.npmjs.org/@types%2freact-dom set size:undefined disposed:false
+16 silly idealTree buildDeps
+17 silly fetch manifest @types/react-dom@19.2.3
+18 silly packumentCache full:https://registry.npmjs.org/@types%2freact-dom cache-miss
+19 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 458ms (cache miss)
+20 silly packumentCache full:https://registry.npmjs.org/@types%2freact-dom set size:undefined disposed:false
+21 silly fetch manifest @types/react@^19.2.17
+22 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+23 http fetch GET 200 https://registry.npmjs.org/@types%2freact 1006ms (cache miss)
+24 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:undefined disposed:false
+25 silly placeDep ROOT @types/react-dom@19.2.3 OK for:  want: 19.2.3
+26 silly reify moves {}
+27 silly audit bulk request {
+27 silly audit   '@types/bcrypt': [ '6.0.0' ],
+27 silly audit   '@types/body-parser': [ '1.19.6' ],
+27 silly audit   '@types/connect': [ '3.4.38' ],
+27 silly audit   '@types/cors': [ '2.8.19' ],
+27 silly audit   '@types/express': [ '5.0.6' ],
+27 silly audit   '@types/express-serve-static-core': [ '5.1.1' ],
+27 silly audit   '@types/http-errors': [ '2.0.5' ],
+27 silly audit   '@types/jsonwebtoken': [ '9.0.10' ],
+27 silly audit   '@types/ms': [ '2.1.0' ],
+27 silly audit   '@types/node': [ '25.9.3' ],
+27 silly audit   '@types/qs': [ '6.15.1' ],
+27 silly audit   '@types/range-parser': [ '1.2.7' ],
+27 silly audit   '@types/react': [ '19.2.17' ],
+27 silly audit   '@types/send': [ '1.2.1' ],
+27 silly audit   '@types/serve-static': [ '2.2.0' ],
+27 silly audit   csstype: [ '3.2.3' ],
+27 silly audit   'types-registry': [ '0.1.774' ],
+27 silly audit   'undici-types': [ '7.24.6' ],
+27 silly audit   '@types/react-dom': [ '19.2.3' ]
+27 silly audit }
+28 http cache @types/react-dom@https://registry.npmjs.org/@types/react-dom/-/react-dom-19.2.3.tgz 1ms (cache hit)
+29 silly tarball no local data for @types/react-dom@https://registry.npmjs.org/@types/react-dom/-/react-dom-19.2.3.tgz. Extracting by manifest.
+30 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 428ms
+31 silly audit report {}
+32 http fetch GET 200 https://registry.npmjs.org/@types/react-dom/-/react-dom-19.2.3.tgz 1045ms (cache miss)
+33 silly ADD node_modules/@types/react-dom
+34 verbose cwd C:\Users\Admin-pc\AppData\Local\Microsoft\TypeScript\6.0
+35 verbose os Windows_NT 10.0.26200
+36 verbose node v24.16.0
+37 verbose npm  v11.13.0
+38 verbose exit 0
+39 info ok

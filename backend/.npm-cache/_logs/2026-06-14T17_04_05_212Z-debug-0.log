@@ -1,0 +1,23 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.13.0
+2 info using node@v24.16.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\smart-parcel-delivery\.npmrc
+5 silly config load:file:C:\Users\Admin-pc\.npmrc
+6 silly config load:file:C:\smart-parcel-delivery\backend\etc\npmrc
+7 verbose title npm exec vite
+8 verbose argv "exec" "--" "vite"
+9 verbose logfile logs-max:10 dir:C:\smart-parcel-delivery\backend\.npm-cache\_logs\2026-06-14T17_04_05_212Z-
+10 verbose logfile C:\smart-parcel-delivery\backend\.npm-cache\_logs\2026-06-14T17_04_05_212Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+14 http fetch GET 200 https://registry.npmjs.org/vite 270ms (cache revalidated)
+15 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+16 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+17 verbose cwd C:\smart-parcel-delivery\frontend
+18 verbose os Windows_NT 10.0.26200
+19 verbose node v24.16.0
+20 verbose npm  v11.13.0
+21 verbose exit 1
+22 verbose code 1

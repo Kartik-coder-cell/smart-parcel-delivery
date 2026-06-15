@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Parcel Delivery System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .premium-card { border: none; border-top: 5px solid #0d6efd; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); }
+      .bg-gradient-custom { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
+      .nav-pills .nav-link.active { background-color: #0d6efd; font-weight: bold; }
+    </style>
+  </head>
+  <body class="bg-gradient-custom min-vh-100 py-4">
+
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-10 text-center">
+          <span class="display-3">📦</span>
+          <h1 class="display-5 fw-bold text-primary mt-1">Smart Parcel Delivery System</h1>
+          <p class="text-muted lead">P2P Decentralized Logistics Hub & Matchmaking Matrix</p>
+          <div class="badge bg-success font-monospace px-3 py-2 border shadow-sm">⚡ DATABASE LINK: ACTIVE ON PORT 5000</div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-10">
+          <ul class="nav nav-pills nav-fill bg-white p-2 rounded shadow-sm" id="dashboardTabs" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active" id="auth-tab" data-bs-toggle="tab" data-bs-target="#authPanel" type="button">👤 1. Auth Node</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" id="sender-tab" data-bs-toggle="tab" data-bs-target="#senderPanel" type="button">📦 2. Sender Desk</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" id="traveller-tab" data-bs-toggle="tab" data-bs-target="#travellerPanel" type="button">🚀 3. Traveller Deck</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <div class="tab-content" id="dashboardTabsContent">
+            
+            <div class="tab-pane fade show active" id="authPanel">
+              <div class="card premium-card p-4 bg-white shadow-sm">
+                <h3 class="h5 fw-bold mb-3 text-secondary">Register New Infrastructure Peer</h3>
+                <form id="registerForm">
+                  <div class="row g-3">
+                    <div class="col-sm-6"><input type="text" id="regName" class="form-control" placeholder="Full Name" required></div>
+                    <div class="col-sm-6"><input type="email" id="regEmail" class="form-control" placeholder="Email Address" required></div>
+                    <div class="col-sm-6"><input type="password" id="regPassword" class="form-control" placeholder="Access Password" required></div>
+                    <div class="col-sm-6">
+                      <select id="regRole" class="form-select">
+                        <option value="Sender">Sender (Has Parcels)</option>
+                        <option value="Traveller">Traveller (Has Routes)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 mt-3 fw-bold py-2">Initialize Profile</button>
+                </form>
+                <div id="authAlert" class="mt-3 d-none alert"></div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="senderPanel">
+              <div class="card premium-card p-4 bg-white shadow-sm mb-4">
+                <h3 class="h5 fw-bold mb-3 text-primary">Deploy Parcel Transport Request</h3>
+                <div class="alert alert-warning py-2 small">⚠️ Note: Enter your database User ID from phpMyAdmin to trace ownership!</div>
+                <form id="parcelForm">
+                  <div class="row g-3">
+                    <div class="col-sm-4"><input type="number" id="parSenderId" class="form-control" placeholder="User ID (e.g. 1)" required></div>
+                    <div class="col-sm-4"><input type="text" id="parPickup" class="form-control" placeholder="Pickup City" required></div>
+                    <div class="col-sm-4"><input type="text" id="parDest" class="form-control" placeholder="Destination City" required></div>
+                    <div class="col-sm-4"><input type="number" step="0.1" id="parWeight" class="form-control" placeholder="Weight (KG)" required></div>
+                    <div class="col-sm-8"><input type="text" id="parDesc" class="form-control" placeholder="Item Description (e.g. Doc files)" required></div>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 mt-3 fw-bold">Inject Parcel Packet</button>
+                </form>
+                <div id="parcelAlert" class="mt-3 d-none alert alert-success"></div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="travellerPanel">
+              <div class="card premium-card p-4 bg-white shadow-sm mb-4">
+                <h3 class="h5 fw-bold mb-3 text-success">Publish Commuter Transit Vector</h3>
+                <form id="routeForm">
+                  <div class="row g-3">
+                    <div class="col-sm-3"><input type="number" id="rtTravellerId" class="form-control" placeholder="User ID (e.g. 2)" required></div>
+                    <div class="col-sm-3"><input type="text" id="rtSource" class="form-control" placeholder="Source City" required></div>
+                    <div class="col-sm-3"><input type="text" id="rtDest" class="form-control" placeholder="Destination City" required></div>
+                    <div class="col-sm-3"><input type="date" id="rtDate" class="form-control" required></div>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100 mt-3 fw-bold">Publish Route Leg</button>
+                </form>
+                <div id="routeAlert" class="mt-3 d-none alert alert-success"></div>
+              </div>
+
+              <div class="card shadow-sm border-0 p-4 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4 class="h6 fw-bold mb-0 text-secondary">🗺️ Cross-Reference Match Engine</h4>
+                  <button class="btn btn-sm btn-outline-success fw-semibold" onclick="loadMatchingDashboard()">🤖 Scan Database Pipeline</button>
+                </div>
+                <div id="matrixDisplay" class="list-group font-monospace small">
+                  <div class="text-center py-3 text-muted">Click Scan to trigger cross-table logical mapping analysis...</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const BACKEND_URL = 'http://localhost:5000';
+
+      // --- HELPER FUNCTION FOR ALERTS ---
+      function showAlert(elementId, text, type = 'success') {
+        const el = document.getElementById(elementId);
+        el.className = `mt-3 alert alert-${type}`;
+        el.innerText = text;
+        el.classList.remove('d-none');
+      }
+
+      // --- 1. PEER REGISTRATION ENGINE ---
+      document.getElementById('registerForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const payload = {
+          name: document.getElementById('regName').value,
+          email: document.getElementById('regEmail').value,
+          password: document.getElementById('regPassword').value,
+          role: document.getElementById('regRole').value
+        };
+        try {
+          const res = await fetch(`${BACKEND_URL}/api/auth/register`, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          if(res.ok) {
+            showAlert('authAlert', '🎉 Peer initialized perfectly! Record committed to database user index.');
+            document.getElementById('registerForm').reset();
+          } else { showAlert('authAlert', data.message, 'danger'); }
+        } catch { showAlert('authAlert', 'Server Connection Lost.', 'danger'); }
+      });
+
+      // --- 2. SENDER PARCEL INJECTION ---
+      document.getElementById('parcelForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const payload = {
+          sender_id: document.getElementById('parSenderId').value,
+          pickup_city: document.getElementById('parPickup').value,
+          destination_city: document.getElementById('parDest').value,
+          weight: document.getElementById('parWeight').value,
+          description: document.getElementById('parDesc').value
+        };
+        try {
+          const res = await fetch(`${BACKEND_URL}/api/parcels`, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+          });
+          if(res.ok) {
+            showAlert('parcelAlert', '📦 Parcel packet routed and bound to specific Sender tracking row!');
+            document.getElementById('parcelForm').reset();
+          }
+        } catch { alert('Network pipeline structural error.'); }
+      });
+
+      // --- 3. TRAVELLER ROUTE PUBLICATION ---
+      document.getElementById('routeForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const payload = {
+          traveller_id: document.getElementById('rtTravellerId').value,
+          source_city: document.getElementById('rtSource').value,
+          destination_city: document.getElementById('rtDest').value,
+          travel_date: document.getElementById('rtDate').value
+        };
+        try {
+          const res = await fetch(`${BACKEND_URL}/api/routes`, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+          });
+          if(res.ok) {
+            showAlert('routeAlert', '🛣️ Transit vector tracking mapped successfully across regional cluster paths.');
+            document.getElementById('routeForm').reset();
+          }
+        } catch { alert('Transmission failure.'); }
+      });
+
+      // --- 4. ALGORITHMIC SYSTEM MATCH SCHEDULER ---
+      async function loadMatchingDashboard() {
+        const display = document.getElementById('matrixDisplay');
+        display.innerHTML = '<div class="text-center py-2"><div class="spinner-border spinner-border-sm text-success"></div> Processing pipeline arrays...</div>';
+        try {
+          const pRes = await fetch(`${BACKEND_URL}/api/parcels`);
+          const rRes = await fetch(`${BACKEND_URL}/api/routes`);
+          const parcels = await pRes.json();
+          const routes = await rRes.json();
+
+          display.innerHTML = '';
+          let matchesFound = 0;
+
+          routes.forEach(route => {
+            parcels.forEach(parcel => {
+              // Mathematical Match Verification Algorithm
+              if(route.source_city.toLowerCase() === parcel.pickup_city.toLowerCase() && 
+                 route.destination_city.toLowerCase() === parcel.destination_city.toLowerCase()) {
+                matchesFound++;
+                display.innerHTML += `
+                  <div class="list-group-item list-group-item-success border-success mb-2 rounded shadow-sm">
+                    <div class="fw-bold text-success">🔥 LOGISTICAL MATCH DETECTED</div>
+                    <div class="mt-1">🛣️ Route Leg: ${route.source_city} ➔ ${route.destination_city} (Traveller ID: ${route.traveller_id})</div>
+                    <div class="mt-1">📦 Cargo load: ${parcel.description} (${parcel.weight} KG) (Sender ID: ${parcel.sender_id})</div>
+                    <div class="mt-1 small text-muted font-monospace">Optimization Protocol Strategy: Direct P2P Intercept Match</div>
+                  </div>`;
+              }
+            });
+          });
+
+          if(matchesFound === 0) {
+            display.innerHTML = '<div class="text-center py-2 text-warning border border-warning rounded">⚡ Scanning Complete: Zero cross-reference intercept matches found in existing tables yet.</div>';
+          }
+        } catch { display.innerHTML = '<div class="text-danger py-2">Critical relational join structural mismatch.</div>'; }
+      }
+    </script>
+  </body>
+</html>
